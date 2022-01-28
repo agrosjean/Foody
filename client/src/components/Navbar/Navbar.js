@@ -8,6 +8,7 @@ import {
   Container,
 } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
+import { LinkContainer } from "react-router-bootstrap";
 import Stack from "@mui/material/Stack";
 import "./Navbar.css";
 
@@ -39,9 +40,15 @@ function Navbar() {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/restaurants">Restaurants</Nav.Link>
-            <Nav.Link href="/reviews">My Reviews</Nav.Link>
+            <LinkContainer to="/">
+              <Nav.Link>Home</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/restaurants">
+              <Nav.Link>Restaurants</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/reviews">
+              <Nav.Link>My Reviews</Nav.Link>
+            </LinkContainer>
           </Nav>
           <Stack direction="row" spacing={2}>
             {userID ? (
