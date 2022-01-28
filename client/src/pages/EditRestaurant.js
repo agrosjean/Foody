@@ -31,7 +31,7 @@ export default function EditRestaurant() {
       body: JSON.stringify({ name: name, cuisine: cuisine }),
     }).then((resp) => {
       // After update success, then navigate to home page
-      navigate("/");
+      navigate("/restaurants");
     });
   };
 
