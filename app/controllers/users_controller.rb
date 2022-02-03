@@ -12,8 +12,14 @@ class UsersController < ApplicationController
     def login
         user = User.find_by(email: params[:email])
         if user
-            session[:user_id] = user.id
-            render json: user, status: 200
+            if user.authenticate(params[:password])
+                # correct password
+                session[:user_id] = user.id
+                render json: user, status: 200
+            else
+                # wrong password
+                render json: {"message": 'Incorrect Password'}, status: :bad_request
+            end
         else
             render json: {"message": 'User not found'}, status: :not_found
         end
@@ -53,7 +59,7 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.permit( :name, :email)
+        params.permit( :name, :email, :password)
     end
 
     def find_user

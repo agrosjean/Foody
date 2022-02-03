@@ -5,6 +5,7 @@ import { useNavigate, Link } from "react-router-dom";
 function LogIn() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [currentUser, setCurrentUser] = useState("");
   const navigate = useNavigate();
 
@@ -18,7 +19,7 @@ function LogIn() {
         "Content-Type": "application/json",
       },
       method: "POST",
-      body: JSON.stringify({ email }),
+      body: JSON.stringify({ email, password }),
     }).then((resp) => {
       // After send success, then refresh page
       if (resp.ok) {
@@ -27,6 +28,7 @@ function LogIn() {
           localStorage.setItem("email", user.email);
           localStorage.setItem("id", user.id);
           localStorage.setItem("name", user.name);
+          localStorage.setItem("admin", user.admin);
           navigate("/restaurants");
         });
       } else {
@@ -51,6 +53,19 @@ function LogIn() {
               value={email}
               onChange={(event) => setEmail(event.target.value)}
               placeholder="email@example.com"
+            />
+          </Col>
+        </Form.Group>
+        <Form.Group as={Row} className="mb-3" controlId="Password">
+          <Form.Label column sm="2">
+            Password
+          </Form.Label>
+          <Col sm="10">
+            <Form.Control
+              type="password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+              placeholder="Enter password"
             />
           </Col>
         </Form.Group>

@@ -1,0 +1,17 @@
+.footer_container {
+  display: flex;
+  justify-content: space-between;
+  background: #4e6692;
+  color: lightgray;
+  padding: 20px;
+}
+
+.footer_container > * {
+  align-self: center;
+  width: 30%;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+}

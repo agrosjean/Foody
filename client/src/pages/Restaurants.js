@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Table, Form, Button, Container } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
-function HomePage() {
+
+function Restaurant() {
   const [restaurants, setRestaurants] = useState([]);
   const [name, setName] = useState("");
   const [cuisine, setCuisine] = useState("");
@@ -124,4 +125,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default Restaurant;

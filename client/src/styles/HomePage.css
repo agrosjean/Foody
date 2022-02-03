@@ -1,0 +1,38 @@
+.brunch {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.brunch_img img {
+  width: 450px;
+  height: 450px;
+  border-radius: 20px;
+}
+
+.brunch_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.home_container {
+  width: 85%;
+  margin: 20px auto;
+}
+
+.carousel img {
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+.carousel {
+  margin-top: 20px;
+}
+
+.react-multi-carousel-item {
+  max-width: 230px;
+  min-width: 230px;
+}

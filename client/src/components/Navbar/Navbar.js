@@ -13,7 +13,9 @@ import Stack from "@mui/material/Stack";
 import "./Navbar.css";
 
 function Navbar() {
-  const userID = localStorage.getItem("id"); // 14 or null;
+  const isLoggedIn = localStorage.getItem("id"); // 14 or null;
+  const isAdmin = JSON.parse(localStorage.getItem("admin"));
+
   const navigate = useNavigate();
   const logout = () => {
     fetch("/logout", { method: "DELETE" }).then((res) => {
@@ -27,8 +29,8 @@ function Navbar() {
   return (
     <BootstrapNavbar className="NavbarItems" bg="light" expand="lg">
       <Container fluid>
-        <BootstrapNavbar.Brand className="navbar-logo" href="#">
-          Foody
+        <BootstrapNavbar.Brand className="navbar-logo">
+          <h2>Foody</h2>
         </BootstrapNavbar.Brand>
         <BootstrapNavbar.Toggle
           className="fab fa-react"
@@ -49,9 +51,14 @@ function Navbar() {
             <LinkContainer to="/reviews">
               <Nav.Link>My Reviews</Nav.Link>
             </LinkContainer>
+            {isLoggedIn && isAdmin && (
+              <LinkContainer to="/admin">
+                <Nav.Link>Admin</Nav.Link>
+              </LinkContainer>
+            )}
           </Nav>
           <Stack direction="row" spacing={2}>
-            {userID ? (
+            {isLoggedIn ? (
               <Button onClick={logout}>Logout</Button>
             ) : (
               <>

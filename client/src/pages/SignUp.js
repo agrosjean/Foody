@@ -5,6 +5,7 @@ import { useNavigate, Link } from "react-router-dom";
 function SignUp() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [currentUSer, setCurrentUser] = useState("");
   const navigate = useNavigate();
 
@@ -18,7 +19,7 @@ function SignUp() {
         "Content-Type": "application/json",
       },
       method: "POST",
-      body: JSON.stringify({ name: name, email: email }),
+      body: JSON.stringify({ name: name, email: email, password: password }),
     }).then((resp) => {
       // After send success, then refresh page
       if (resp.ok) {
@@ -60,6 +61,19 @@ function SignUp() {
               value={email}
               onChange={(event) => setEmail(event.target.value)}
               placeholder="email@example.com"
+            />
+          </Col>
+        </Form.Group>
+        <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+          <Form.Label column sm="2">
+            Password
+          </Form.Label>
+          <Col sm="10">
+            <Form.Control
+              type="password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+              placeholder="Enter password"
             />
           </Col>
         </Form.Group>
