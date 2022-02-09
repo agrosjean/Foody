@@ -23,16 +23,16 @@
 }
 
 .carousel img {
-  width: 200px;
-  height: 200px;
-  border-radius: 15px;
+  width: 300px;
+  height: 250px;
+  border-radius: 30px;
   margin-bottom: 10px;
 }
 .carousel {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .react-multi-carousel-item {
-  max-width: 230px;
-  min-width: 230px;
+  max-width: 330px;
+  min-width: 330px;
 }
