@@ -55,7 +55,7 @@ function HomePage() {
           </div>
           <div className="carousel">
             <img src={Foody9} alt="background_1" />
-            <p> Sizzling Fish </p>
+            <h5> Kung Pao Chicken </h5>
           </div>
           <div className="carousel">
             <img src={Foody2} alt="background_1" />
