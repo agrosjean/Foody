@@ -12,6 +12,7 @@ function Restaurant() {
   const [closed_time, setClosedTime] = useState("");
   const [address, setAddress] = useState("");
   const [image_url, setImageUrl] = useState("");
+  const isLoggedIn = localStorage.getItem("id");
 
   useEffect(() => {
     fetch("http://localhost:3000/restaurants")
@@ -108,10 +109,11 @@ function Restaurant() {
                 {/* <Link to={`/restaurants/edit/${id}`}>
                   <Button variant="danger">Update</Button>
                 </Link> */}
-
-                <Link to={`/restaurants/${id}`}>
-                  <Button variant="warning">View</Button>
-                </Link>
+                {isLoggedIn && (
+                  <Link to={`/restaurants/${id}`}>
+                    <Button variant="warning">View</Button>
+                  </Link>
+                )}
               </div>
             </div>
           </div>

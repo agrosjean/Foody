@@ -37,9 +37,21 @@ function HomePage() {
       <div className="brunch">
         <div className="brunch_text">
           <h2>I present you Foody</h2>
+          <br />
           <h5>
-            A plateforme to discover and review all restaurant in New York City
+            A plateforme to discover and review all restaurant in New York City.
           </h5>
+
+          <div>
+            <h5>
+              We display Japanese, Mexican, Chinese, Italian and American
+              cuisine.
+            </h5>
+          </div>
+          <br />
+          <div>
+            <h3>Be Foody!!</h3>
+          </div>
         </div>
         <div className="brunch_img">
           <img src={Bground} alt="background_1" />
