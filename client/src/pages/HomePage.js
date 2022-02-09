@@ -39,12 +39,12 @@ function HomePage() {
           <h2>I present you Foody</h2>
           <br />
           <h5>
-            A plateforme to discover and review all restaurant in New York City.
+            A plateform to discover and review all restaurants in New York City.
           </h5>
 
           <div>
             <h5>
-              We display Japanese, Mexican, Chinese, Italian and American
+              We display Japanese, Mexican, Chinese, Italian, and American
               cuisine.
             </h5>
           </div>
