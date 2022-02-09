@@ -52,6 +52,10 @@ function HomePage() {
           <div>
             <h3>Be Foody!!</h3>
           </div>
+          <br />
+          <div>
+            <h6>Don't use Yelp :)</h6>
+          </div>
         </div>
         <div className="brunch_img">
           <img src={Bground} alt="background_1" />
