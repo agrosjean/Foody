@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   post "/login",  to: "users#login"
   delete "/logout", to: "users#logout"
   resources :users
+  get 'reviews/by-user-id/:user_id', to: "reviews#by_user_id"
   
 end

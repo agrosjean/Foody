@@ -48,9 +48,11 @@ function Navbar() {
             <LinkContainer to="/restaurants">
               <Nav.Link>Restaurants</Nav.Link>
             </LinkContainer>
-            <LinkContainer to="/reviews">
-              <Nav.Link>My Reviews</Nav.Link>
-            </LinkContainer>
+            {isLoggedIn && (
+              <LinkContainer to="/myReview">
+                <Nav.Link>My Reviews</Nav.Link>
+              </LinkContainer>
+            )}
             {isLoggedIn && isAdmin && (
               <LinkContainer to="/admin">
                 <Nav.Link>Admin</Nav.Link>

@@ -1,0 +1,58 @@
+.restaurant_card {
+  padding: 25px;
+  display: flex;
+  border: 1px solid darkgray;
+
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.restaurant_card img {
+  width: 420px;
+  height: 300px;
+  border-radius: 10px;
+  margin-right: 10%;
+  align-self: center;
+}
+
+.restaurant_card h1 {
+  font-size: 2rem;
+}
+
+.restaurant_card p {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.card_buttons > * {
+  margin-right: 20px;
+}
+
+.restaurant_profile {
+  padding: 40px;
+  text-align: center;
+  border: 1px solid lightgray;
+  width: 70%;
+  margin: 30px auto;
+  border-radius: 10px;
+}
+
+.restaurant_profile ul {
+  list-style: none;
+}
+
+.restaurant_profile ul li {
+  margin-bottom: 10px;
+  font-size: 0.7rem;
+}
+
+.review_btn h2 {
+  font-size: 1rem !important;
+}
+
+.restaurant_profile p {
+  margin-top: 10px;
+  margin-bottom: 0 !important;
+  color: red;
+  font-size: 1rem;
+}

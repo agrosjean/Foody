@@ -18,6 +18,19 @@ class ReviewsController < ApplicationController
         end
     end
 
+    # GET /reviews/by-user-id/:user_id
+    def by_user_id
+        user_id = params[:user_id]
+        user = User.find_by(id: user_id) # user => user or nil
+        if user
+            render json: user.reviews.as_json(include: :restaurant)
+        else
+            render json: {error: "No user under this id"}, status: :not_found
+        end
+        # user_reviews = user.reviews
+        # render json: user_reviews
+    end
+
     private
 
     def review_params

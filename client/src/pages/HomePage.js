@@ -28,10 +28,10 @@ function HomePage() {
     <div className="home_container">
       <div className="brunch">
         <div className="brunch_text">
-          <h2>A recipe marketplace for culinary creators</h2>
-          <p>
-            Buy amazing recipes and support your favorite culinary creators.
-          </p>
+          <h2>I present you Foody</h2>
+          <h5>
+            A plateforme to discover and review all restaurant in New York City
+          </h5>
         </div>
         <div className="brunch_img">
           <img src={Bground} alt="background_1" />
@@ -39,7 +39,7 @@ function HomePage() {
       </div>
 
       <div className="recipes">
-        <h2>Featured Recipes</h2>
+        <h2>Featured Cuisine</h2>
         <Carousel responsive={responsive}>
           <div className="carousel">
             <img src={Bground} alt="background_1" />

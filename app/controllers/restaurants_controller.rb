@@ -39,13 +39,13 @@ class RestaurantsController < ApplicationController
     end
 
     def show
-        render json: find_restaurant
+        render json: find_restaurant.as_json(include: :reviews)
     end
 
     private
 
     def restaurant_params
-        params.permit( :name, :cuisine, :score)
+        params.permit( :name, :cuisine, :score, :open_time, :closed_time, :address, :image_url)
     end
 
     def find_restaurant
