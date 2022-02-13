@@ -13,7 +13,7 @@ function LogIn() {
     event.preventDefault();
 
     // Send the new dog info to the backend
-    fetch("http://localhost:3000/login", {
+    fetch("/login", {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",

@@ -8,7 +8,7 @@ function RestaurantProfile() {
   const [restaurant, setRestaurant] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:3000/restaurants/${id}`)
+    fetch(`/restaurants/${id}`)
       .then((response) => response.json())
       .then((restaurantJson) => {
         console.log(restaurantJson);

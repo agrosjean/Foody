@@ -14,7 +14,7 @@ function Restaurant() {
   console.log(image_url);
 
   useEffect(() => {
-    fetch("http://localhost:3000/restaurants")
+    fetch("/restaurants")
       .then((response) => response.json())
       .then((restaurantsJson) => {
         setRestaurants(restaurantsJson);
@@ -23,7 +23,7 @@ function Restaurant() {
 
   const handleUpdateClick = (restaurantID) => {
     // send a request to delete the row that was clicked
-    fetch(`http://localhost:3000/restaurants/${restaurantID}`, {
+    fetch(`/restaurants/${restaurantID}`, {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -37,7 +37,7 @@ function Restaurant() {
 
   const handleDeleteClick = (restaurantID) => {
     // send a request to delete the row that was clicked
-    fetch(`http://localhost:3000/restaurants/${restaurantID}`, {
+    fetch(`/restaurants/${restaurantID}`, {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -53,7 +53,7 @@ function Restaurant() {
     event.preventDefault();
 
     // Send the new dog info to the backend
-    fetch("http://localhost:3000/restaurants", {
+    fetch("/restaurants", {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",

@@ -7,7 +7,7 @@ function MyReview() {
   const userID = localStorage.getItem("id");
 
   useEffect(() => {
-    fetch(`http://localhost:3000/reviews/by-user-id/${userID}`)
+    fetch(`/reviews/by-user-id/${userID}`)
       .then((response) => response.json())
       .then((userReviewsJson) => {
         console.log(userReviewsJson, "jaon <===");
@@ -16,7 +16,7 @@ function MyReview() {
   }, [userID]);
 
   const handleDeleteClick = (reviewID) => {
-    fetch(`http://localhost:3000/reviews/${reviewID}`, {
+    fetch(`/reviews/${reviewID}`, {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",

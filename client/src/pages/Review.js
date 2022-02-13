@@ -13,7 +13,7 @@ function Review() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:3000/restaurants/${id}`)
+    fetch(`/restaurants/${id}`)
       .then((response) => response.json())
       .then((restaurantJson) => {
         console.log(restaurantJson);
@@ -25,7 +25,7 @@ function Review() {
     event.preventDefault();
 
     // Send the new dog info to the backend
-    fetch("http://localhost:3000/reviews", {
+    fetch("/reviews", {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",

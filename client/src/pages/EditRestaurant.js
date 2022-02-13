@@ -14,7 +14,7 @@ export default function EditRestaurant() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:3000/restaurants/${id}`)
+    fetch(`/restaurants/${id}`)
       .then((response) => response.json())
       .then((restaurantJson) => {
         console.log(restaurantJson);
@@ -32,7 +32,7 @@ export default function EditRestaurant() {
     event.preventDefault();
 
     // Send the updated restaurant info to the backend
-    fetch(`http://localhost:3000/restaurants/${id}`, {
+    fetch(`/restaurants/${id}`, {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
