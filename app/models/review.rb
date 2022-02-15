@@ -9,6 +9,9 @@ class Review < ApplicationRecord
 
     def update_restaurant_score
         restaurant = self.restaurant
+        if !restaurant 
+            return 
+        end
         sum_ratings = 0
         restaurant.reviews.each do |review|
             sum_ratings = sum_ratings + review.rating
