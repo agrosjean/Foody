@@ -31,10 +31,10 @@ function MyReview() {
   return (
     <>
       <h1>My Reviews</h1>
-      <ul>
+      <ul className="list-group list-group-flush">
         {userReviews?.map((review) => {
           return (
-            <li key={review.id}>
+            <li className="list-group-item" key={review.id}>
               {moment(review.created_at).format("MMMM Do YYYY")}:{" "}
               {review.restaurant.name} - {review.comment}
               <Button onClick={() => handleDeleteClick(review.id)}>

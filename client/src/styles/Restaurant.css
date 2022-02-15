@@ -20,7 +20,7 @@
 }
 
 .restaurant_card p {
-  font-size: 0.8rem;
+  /* font-size: 0.8rem; */
   margin-bottom: 10px;
 }
 
@@ -39,11 +39,12 @@
 
 .restaurant_profile ul {
   list-style: none;
+  padding-left: 0;
 }
 
 .restaurant_profile ul li {
   margin-bottom: 10px;
-  font-size: 0.7rem;
+  /* font-size: 0.7rem; */
 }
 
 .review_btn h2 {

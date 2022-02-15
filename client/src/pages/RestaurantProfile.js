@@ -24,7 +24,11 @@ function RestaurantProfile() {
       <p>Reviews: </p>
       <ul>
         {restaurant.reviews?.map((review) => {
-          return <li key={review.id}>{review.comment}</li>;
+          return (
+            <li key={review.id}>
+              {review.user.name} : {review.comment}
+            </li>
+          );
         })}
       </ul>
       <Link to={`/review/${id}`}>

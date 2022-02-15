@@ -39,7 +39,9 @@ class RestaurantsController < ApplicationController
     end
 
     def show
-        render json: find_restaurant.as_json(include: :reviews)
+        render json: find_restaurant.as_json(
+            include: { reviews: { include: :user } }
+        )
     end
 
     private

@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 
 function Review() {
   const [comment, setComment] = useState("");
+  const [rating, setRating] = useState("");
   const loggedInUserID = localStorage.getItem("id");
   const [userID, setUserID] = useState(loggedInUserID);
   const { id } = useParams();
@@ -33,6 +34,7 @@ function Review() {
       method: "POST",
       body: JSON.stringify({
         comment: comment,
+        rating: rating,
         user_id: userID,
         restaurant_id: restaurantID,
       }),
@@ -60,9 +62,20 @@ function Review() {
           <Form.Label>Comments</Form.Label>
           <Form.Control
             as="textarea"
+            required
             rows={3}
             value={comment}
             onChange={(event) => setComment(event.target.value)}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+          <Form.Label>Ratings</Form.Label>
+          <Form.Control
+            as="textarea"
+            required
+            rows={3}
+            value={rating}
+            onChange={(event) => setRating(event.target.value)}
           />
         </Form.Group>
         <div className="mb-3">

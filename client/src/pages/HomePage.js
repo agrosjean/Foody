@@ -10,6 +10,7 @@ import Foody6 from "../assets/Foody6.jpg";
 import Foody7 from "../assets/Foody7.jpeg";
 import Foody9 from "../assets/Foody9.jpeg";
 import Carousel from "react-multi-carousel";
+import { Container, Row, Col } from "react-bootstrap";
 
 function HomePage() {
   const responsive = {
@@ -33,7 +34,7 @@ function HomePage() {
   };
 
   return (
-    <div className="home_container">
+    <Container className="home_container">
       <div className="brunch">
         <div className="brunch_text">
           <h2>I present you Foody</h2>
@@ -99,7 +100,7 @@ function HomePage() {
           </div>
         </Carousel>
       </div>
-    </div>
+    </Container>
   );
 }
 export default HomePage;

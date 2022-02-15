@@ -7,6 +7,7 @@ function LogIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [currentUser, setCurrentUser] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleClick = (event) => {
@@ -32,9 +33,8 @@ function LogIn() {
           navigate("/restaurants");
         });
       } else {
-        resp.json().then((errors) => {
-          console.log("errrr==>>", errors);
-          console.error(errors);
+        resp.json().then((error) => {
+          setError(error.message);
         });
       }
     });
@@ -67,6 +67,7 @@ function LogIn() {
               onChange={(event) => setPassword(event.target.value)}
               placeholder="Enter password"
             />
+            {error}
           </Col>
         </Form.Group>
         <Button variant="primary" type="submit" onClick={handleClick}>
